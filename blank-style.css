@@ -1,0 +1,21 @@
+th {
+    text-transform:uppercase;
+  }
+
+  a {
+    color: #01ff67;
+  }
+
+  .top {
+    background-color:#ff6701;
+  }
+
+  em {
+    color:#4f00fa;
+  }
+
+  #the_most_important {
+    text-transform:uppercase;
+    background-color:#fff200;
+
+  }
