@@ -1,0 +1,45 @@
+*{
+
+    background: #272727; 
+
+}
+
+header {
+
+    color: #6EEB83;
+font-family: DM Serif Display;
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+line-height: normal; 
+
+}
+
+p {
+
+    color: #FFF;
+font-family: Lexend Deca;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal
+
+}
+
+a {
+
+    color: #6EEB83;
+    font-family: Lexend Deca;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal; 
+
+}
+
+input {
+
+    color: #FFF;
+font-family: Lexend Deca;
+
+}
