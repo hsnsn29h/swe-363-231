@@ -1,8 +1,14 @@
-*{
+body:not(nav), nav:first-child img{
 
     background: #272727; 
-
-}
+    
+    animation: cssAnimation 0s 2s forwards;
+    visibility: hidden;
+  }
+  
+  @keyframes cssAnimation {
+    to   { visibility: visible; }
+  }
 
 header {
 
@@ -60,11 +66,7 @@ nav {
     
     }
 
-nav:first-child img {
 
-    visibility: visible;
-        
-        }
 
 nav:hover {
     
@@ -78,3 +80,33 @@ a:nth-child(4){transition-delay: 3s;}
 a:nth-child(5){transition-delay: 4s;}
 a:nth-child(6){transition-delay: 5s;}
 a:nth-child(7){transition-delay: 6s;}
+
+.loader {
+    transition-delay: 0s;
+    border: 16px solid #ffffff; 
+    border-top: 16px solid #0dfb01; 
+    border-radius: 50%;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    visibility: visible;
+    animation: spin 2s 0s forwards;
+
+    position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+
+            
+          }
+         
+
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg);}
+    to {visibility: hidden;}
+
+  }
