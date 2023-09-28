@@ -37,9 +37,44 @@ a {
 
 }
 
+
+a:hover {
+
+background-color: yellow;
+transition: background-color 1s;
+
+}
+
 input {
 
     color: #FFF;
 font-family: Lexend Deca;
 
 }
+
+
+
+nav {
+
+    visibility: hidden;
+    
+    }
+
+nav:first-child img {
+
+    visibility: visible;
+        
+        }
+
+nav:hover {
+    
+    visibility: visible;
+
+}
+
+a:nth-child(2){transition-delay: 1s;}
+a:nth-child(3){transition-delay: 2s;}
+a:nth-child(4){transition-delay: 3s;}
+a:nth-child(5){transition-delay: 4s;}
+a:nth-child(6){transition-delay: 5s;}
+a:nth-child(7){transition-delay: 6s;}
