@@ -10,6 +10,14 @@ body:not(nav), nav:first-child img{
     to   { visibility: visible; }
   }
 
+  body{
+
+    padding: 16px;
+
+  }
+
+ 
+
 h1,h2 {
 
     color: #6EEB83;
