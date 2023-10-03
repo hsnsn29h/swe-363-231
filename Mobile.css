@@ -10,11 +10,21 @@ body:not(nav), nav:first-child img{
     to   { visibility: visible; }
   }
 
+  body{
+
+width: 428px;
+height: 926px; 
+
+  }
+
 h1,h2 {
 
-    color: #6EEB83;
+  width: 342px;
+  height: 96px;
+  flex-shrink: 0; 
+  color: #6EEB83;
 font-family: DM Serif Display;
-font-size: 32px;
+font-size: 24px;
 font-style: normal;
 font-weight: 400;
 line-height: normal; 
@@ -43,8 +53,7 @@ line-height: normal;
 
 section{
 
-position: absolute;
-right: 0;
+
 margin: 2pc;
 
 }
@@ -73,12 +82,15 @@ margin: 2pc;
 
 p, figcaption, th {
 
-    color: #FFF;
-font-family: Lexend Deca;
-font-size: 20px;
-font-style: normal;
-font-weight: 400;
-line-height: normal
+  width: 338px;
+  height: 243px;
+  flex-shrink: 0; 
+  color: #FFF;
+  font-family: Lexend Deca;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal; 
 
 }
 
