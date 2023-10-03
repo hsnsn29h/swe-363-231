@@ -1,0 +1,162 @@
+body:not(nav), nav:first-child img{
+
+    background: #272727; 
+    
+    animation: cssAnimation 0s 2s forwards;
+    visibility: hidden;
+  }
+  
+  @keyframes cssAnimation {
+    to   { visibility: visible; }
+  }
+
+h1,h2 {
+
+    color: #6EEB83;
+font-family: DM Serif Display;
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+line-height: normal; 
+
+}
+
+.watermark{
+
+    position: relative;
+    display: inline-block;
+
+
+}
+
+
+  .watermark:after {
+    content: "H.A";
+    position: absolute;
+    bottom: 0px;
+    left: 24px;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: rgba(121, 107, 107, 0.7);
+    pointer-events: none;
+  }
+
+section{
+
+position: absolute;
+right: 0;
+margin: 2pc;
+
+}
+
+
+.card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+  }
+
+  .cardHeader{
+
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+
+  .card .date {
+    font-size: 14px;
+    color: #888;
+  }
+
+
+p, figcaption, th {
+
+    color: #FFF;
+font-family: Lexend Deca;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal
+
+}
+
+a {
+
+    color: #6EEB83;
+    font-family: Lexend Deca;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal; 
+
+}
+
+
+a:hover {
+
+background-color: yellow;
+transition: background-color 1s;
+
+}
+
+input {
+
+    color: #FFF;
+font-family: Lexend Deca;
+
+}
+
+
+
+nav {
+
+    visibility: hidden;
+    
+    }
+
+
+
+nav:hover {
+    
+    visibility: visible;
+
+}
+
+a:nth-child(2){transition-delay: 1s;}
+a:nth-child(3){transition-delay: 2s;}
+a:nth-child(4){transition-delay: 3s;}
+a:nth-child(5){transition-delay: 4s;}
+a:nth-child(6){transition-delay: 5s;}
+a:nth-child(7){transition-delay: 6s;}
+
+.loader {
+    transition-delay: 0s;
+    border: 16px solid #ffffff; 
+    border-top: 16px solid #0dfb01; 
+    border-radius: 50%;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    visibility: visible;
+    animation: spin 2s 0s forwards;
+
+    position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+
+            
+          }
+         
+
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg);}
+    to {visibility: hidden;}
+
+  }
