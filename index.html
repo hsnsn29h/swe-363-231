@@ -36,13 +36,21 @@
 
 
 
-<section class="row">
+<section class="row" id = "cmmt">
 
     <ul id = "tools" class="row">
 
 <li class="col"><h2>Common Tools:</h2></li>
 
     </ul>
+</section>
+
+
+<section class="row+1s" id = "jokeS">
+    <h2 class="col">Geeky Joke:</h2>
+    <p id="joke" class="row">joke space</p>
+    <button class="row" id="jokeButton" onclick="fetchJoke()">Another Joke!</button>
+
 </section>
 
 <footer class="row">
@@ -65,7 +73,7 @@
 
 
 <script>
-
+fetchJoke();
     const tools = [
     
     
@@ -101,9 +109,30 @@
         ul.appendChild(li);
         i+=1;
     }
+
+
+
+
+    function fetchJoke() {
+            const apiUrl = 'https://geek-jokes.sameerkumar.website/api?format=json';
+
+            fetch(apiUrl)
+                .then(response => {
+                   
+                    return response.json();
+                })
+                .then(data => {
+                    // Handle the data received from the API
+                    let joke = data.joke;
+                    const jokespace = document.getElementById("joke");
+                    jokespace.innerText = joke;
+                });
+                
+        }
     
     
     </script>
+
 
 
 

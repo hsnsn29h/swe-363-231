@@ -49,13 +49,14 @@ line-height: normal;
     pointer-events: none;
   }
 
-section{
+#cmmt{
 
 position: absolute;
 right: 0;
 margin: 2pc;
 
 }
+
 
 
 .card {
