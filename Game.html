@@ -49,6 +49,7 @@ text-align: center;
 
     <h1 class="row-1 text-center" id = "state" >Playing...</h1>
     <p>Each block you click will invert its color and the color of some other blocks, try to invert them all!</p>
+    <p>You can play the game using the keyboard arrows to navigate, and spacebar to invert colors or restart game</p>
 
     <div id = "buttons" class="row-1 text-center">
     <button class="col" id = "1" onclick="boxClicked(this.id)"></button>
@@ -143,6 +144,28 @@ i += 1;
 }
 
 
+let currentIndex = 0;
+
+        document.addEventListener('keydown', function (e) {
+
+            let buttonse = document.querySelectorAll('.col');
+
+            if (e.key === 'ArrowUp') {
+                currentIndex = 0;
+            } else if (e.key === 'ArrowDown') {
+                currentIndex = buttonse.length - 1;
+            } else if (e.key === 'ArrowLeft') {
+                currentIndex = (currentIndex - 1 + buttonse.length) % (buttonse.length);
+            } else if (e.key === 'ArrowRight') {
+                currentIndex = (currentIndex + 1) % (buttonse.length - 1);
+            }
+
+            buttonse.forEach((button, index) => {
+                if (index === currentIndex) {
+                    button.focus();
+                }
+            });
+        });
 
 </script>
 
