@@ -30,12 +30,17 @@
 
 </header>
 
+
+
+
+
+
+
 <section class="row">
 
-    <ul>
+    <ul id = "tools" class="row">
 
 <li class="col"><h2>Common Tools:</h2></li>
-<li class="col"><a href="https://stackoverflow.com/">stackoverflow</a> </li>
 
     </ul>
 </section>
@@ -57,5 +62,50 @@
 
     <p class="row">&copy; 2023 My Personal Blog</p>
 </footer>
+
+
+<script>
+
+    const tools = [
+    
+    
+    {
+        src: "https://stackoverflow.com/",
+        title: "stackoverflow"
+    },
+
+    {
+        src: "https://github.com/",
+        title: "github"
+    },
+
+    {
+        src: "https://w3schools.com/",
+        title: "w3schools"
+    }
+    
+    
+    ]
+    
+    
+    let i = 0;
+    const ul = document.getElementById("tools");
+    while(i < tools.length){
+    
+        var li = document.createElement("li");
+        var a = document.createElement("a");
+        a.setAttribute("href", tools[i].src);
+        a.innerText = tools[i].title;
+        li.append(a);
+        
+        ul.appendChild(li);
+        i+=1;
+    }
+    
+    
+    </script>
+
+
+
 
 </body>
