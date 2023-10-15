@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="desktop.css" media="screen and (min-width: 769px)">
     <link rel="stylesheet" href="Mobile.css" media="screen and (max-width: 768px)">
 
@@ -51,7 +52,9 @@
   <label for="4">4 Stars</label><br>
   <input type="radio" id="5" name="rating" value="5 Stars">
   <label for="5">5 Stars</label><br>
-<input type="submit" value="Submit" formaction="com-confirmation.html">
+<label for="signatureCanvas">Signature:</label>
+<canvas id="signatureCanvas" width="400" height="200" class="row" style="border: 1px solid #ffffff;"></canvas>
+<input type="submit" class="row" value="Submit" formaction="com-confirmation.html" style="color: blacks;">
 
         <fieldset>  
     </form> 
@@ -62,4 +65,66 @@
     </nav>
     <p>&copy; 2023 My Personal Blog</p>
 </footer>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const canvas = document.getElementById('signatureCanvas');
+      const ctx = canvas.getContext('2d');
+      let isDrawing = false;
+
+      canvas.addEventListener('mousedown', startDrawing);
+      canvas.addEventListener('mousemove', draw);
+      canvas.addEventListener('mouseup', stopDrawing);
+      canvas.addEventListener('mouseout', stopDrawing);
+
+      document.getElementById('clearSignature').addEventListener('click', clearSignature);
+
+      function startDrawing(e) {
+        isDrawing = true;
+        draw(e);
+      }
+
+      function draw(e) {
+        if (!isDrawing) return;
+
+        ctx.lineWidth = 2;
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = '#FFF';
+
+        ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+      }
+
+      function stopDrawing() {
+        isDrawing = false;
+        ctx.beginPath();
+      }
+
+      function clearSignature() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+
+      document.getElementById('signatureForm').addEventListener('submit', function (e) {
+        // Prevent the form from submitting and handle the signature data
+        e.preventDefault();
+
+        // Convert the canvas to an image (data URL)
+        const signatureImage = canvas.toDataURL();
+
+        // You can now send the signatureImage data along with other form data to your server
+        // For example, using Fetch API or XMLHttpRequest
+        const formData = new FormData(this);
+        formData.append('signature', signatureImage);
+
+        // Send formData to the server or handle it accordingly
+        console.log('Form Data:', formData);
+      });
+    });
+  </script>
+
+
+
 </body>

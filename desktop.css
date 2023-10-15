@@ -80,7 +80,9 @@ margin: 2pc;
   }
 
 
-p, figcaption, th {
+
+
+p, figcaption, th, option, label, legend {
 
     color: #FFF;
 font-family: Lexend Deca;
@@ -112,7 +114,7 @@ transition: background-color 1s;
 
 input {
 
-    color: #FFF;
+    color: #000000;
 font-family: Lexend Deca;
 
 }
