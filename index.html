@@ -157,20 +157,17 @@
 
     <script>
         fetchJoke();
-        const tools = [
-            {
-                src: "https://stackoverflow.com/",
-                title: "stackoverflow"
-            },
-            {
-                src: "https://github.com/",
-                title: "github"
-            },
-            {
-                src: "https://w3schools.com/",
-                title: "w3schools"
+        class Tool {
+            constructor(title, src) {
+                this.title = title;
+                this.src = src;
             }
-        ]
+        }
+        const tools = [
+            new Tool("stackoverflow", "https://stackoverflow.com/"),
+            new Tool("github", "https://github.com/"),
+            new Tool("w3schools", "https://w3schools.com/")
+        ];
 
         let i = 0;
         const ul = document.getElementById("tools");
