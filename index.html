@@ -164,14 +164,16 @@
             ];
 
             const ul = document.getElementById("tools");
-            tools.forEach((tool) => {
+            const toolElements = tools.map(tool => {
                 const li = document.createElement("li");
                 const a = document.createElement("a");
                 a.setAttribute("href", tool.src);
                 a.innerText = tool.title;
                 li.append(a);
-                ul.appendChild(li);
+                return li;
             });
+
+            ul.append(...toolElements);
         };
 
         createToolList();
