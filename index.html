@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="desktop.css" media="screen and (min-width: 769px)">
     <link rel="stylesheet" href="Mobile.css" media="screen and (max-width: 768px)">
 
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
     <meta charset="UTF-8">
     <meta name="description" content="Coding tools">
     <meta name="keywords" content="HTML, CSS, JavaScript">
@@ -61,6 +65,8 @@
             <p id="joke" class="row">joke space</p>
             <button class="row" id="jokeButton" onclick="fetchJoke()">Another Joke!</button>
         </section>
+
+        <div id="root"></div>
 
         <footer class="row">
             <navbar class="col">
@@ -192,6 +198,16 @@
                 });
         }
     </script>
+
+<script type="text/babel" data-presets="react">
+    // Define your React component
+    function MyComponent() {
+      return <h1>Hello, React!</h1>;
+    }
+  
+    // Render the component to the specified container
+    ReactDOM.render(<MyComponent />, document.getElementById('root'));
+  </script>
 </body>
 
 </html>
