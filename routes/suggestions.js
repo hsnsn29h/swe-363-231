@@ -6,7 +6,7 @@ router.get('/suggestions', (req, res) => {
     res.sendFile(path.join(__dirname, '../suggestions.html'));
   });
 
-  router.get('/suggestions/com-confirmation', (req, res) => {
+  router.get('/com-confirmation', (req, res) => {
     res.sendFile(path.join(__dirname, '../com-confirmation.html'));
   });
 

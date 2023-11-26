@@ -26,6 +26,17 @@ app.use(detailsRouter);
 app.use(suggestionsRouter);
 app.use(contactUsRouter);
 
+app.post('/com-confirmation.html', (req, res) => {
+    // Access form data from the request body
+    const formData = req.body;
+  
+    // Process the form data (for now, just log it)
+    console.log('Form Data:', formData);
+  
+    // Send a confirmation response to the user
+    res.send('Form submission processed successfully!');
+  });
+
 
 // Start the server
 app.listen(port, () => {
