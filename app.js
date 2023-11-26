@@ -1,39 +1,31 @@
 const express = require('express');
-const path = require('path');
 const app = express();
 const port = 3000; // You can choose any port you prefer
 
 // Middleware to serve static files (like your HTML, CSS, and JS files)
 app.use(express.static(__dirname));
 
-// Define routes
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
+const indexRouter = require('./routes/index');
+const indexArRouter = require('./routes/index-ar');
+const tableRouter = require('./routes/table');
+const advanced_tableRouter = require('./routes/advanced-table');
+const detailsRouter = require('./routes/details');
+const suggestionsRouter = require('./routes/suggestions');
+const contactUsRouter = require('./routes/contact-us');
 
-app.get('/index-ar', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index-ar.html'));
-});
 
-app.get('/details', (req, res) => {
-    res.sendFile(path.join(__dirname, 'details.html'));
-});
 
-app.get('/table', (req, res) => {
-    res.sendFile(path.join(__dirname, 'table.html'));
-});
 
-app.get('/advanced-table', (req, res) => {
-    res.sendFile(path.join(__dirname, 'advanced-table.html'));
-});
 
-app.get('/suggestions', (req, res) => {
-    res.sendFile(path.join(__dirname, 'suggestions.html'));
-});
+// Use route handlers
+app.use(indexRouter);
+app.use(indexArRouter);
+app.use(tableRouter);
+app.use(advanced_tableRouter);
+app.use(detailsRouter);
+app.use(suggestionsRouter);
+app.use(contactUsRouter);
 
-app.get('/contact-us', (req, res) => {
-    res.sendFile(path.join(__dirname, 'contact-us.html'));
-});
 
 // Start the server
 app.listen(port, () => {
